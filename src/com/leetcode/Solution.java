@@ -15,17 +15,17 @@ public class Solution {
         ListNode tmp = new ListNode(0);
         ListNode curr = tmp;
         int head = 0;
-        while (l1 != null || l2 != null){
+        while (l1 != null || l2 != null) {
             int x = l1 != null ? l1.val : 0;
             int y = l2 != null ? l2.val : 0;
             int sum = head + x + y;
-            head = sum/10;  //是否近1
-            curr.next = new ListNode(sum%10);//将个位的和保留个位存在tmp
+            head = sum / 10;  //是否近1
+            curr.next = new ListNode(sum % 10);//将个位的和保留个位存在tmp
             curr = curr.next;
-            if(l1 != null) l1 = l1.next;
-            if(l2 != null) l2 = l2.next;
+            if (l1 != null) l1 = l1.next;
+            if (l2 != null) l2 = l2.next;
         }
-        if(head > 0) curr.next = new ListNode(head);
+        if (head > 0) curr.next = new ListNode(head);
         return tmp.next;
 
     }

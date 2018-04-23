@@ -12,32 +12,6 @@ public class Solution {
      * Explanation: 342 + 465 = 807.
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        BigInteger s1 = new BigInteger(listNodeToString(l1));
-        BigInteger s2 = new BigInteger(listNodeToString(l2));
-        String s3 = (s1.add(s2)) + "";
-        ListNode ln = null;
-        for (char c : s3.toCharArray()) {
-            ListNode x = new ListNode(Integer.parseInt(c + ""));
-            x.next = ln;
-            ln = x;
-        }
-        return ln;
-    }
-
-    public String listNodeToString(ListNode ln) {
-        String s = "";
-        do {
-            if (!s.equals("")) {
-                s = ln.val + s;
-            } else {
-                s += ln.val;
-            }
-            ln = ln.next;
-        } while (ln != null);
-        return s;
-    }
-
-    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         ListNode tmp = new ListNode(0);
         ListNode curr = tmp;
         int head = 0;
@@ -61,14 +35,11 @@ public class Solution {
         ListNode l1 = new ListNode(9);
         l1.add(9);
         ListNode l2 = new ListNode(1);
-        long start = new Date().getTime();
-        ListNode res = s.addTwoNumbers2(l1, l2);
-        System.out.println("用时：" + (new Date().getTime() - start));
+        ListNode res = s.addTwoNumbers(l1, l2);
         System.out.print("input: [" + l1 + "] ");
         System.out.println("[" + l2 + "]");
-        System.out.println("output: " + res);
+        System.out.println("output: [" + res + "]");
 
-//        System.out.println(198%10);
     }
 
 }

@@ -12,16 +12,14 @@ public class TenuringThreshold {
         allocation3 = new byte[4 * _1M];
     }
 
-    public void MinorGC(){
+    public void MinorGC() throws InterruptedException {
         byte[] allocation1, allocation2, allocation3;
         allocation1 = new byte[3 * _1M];
-        System.out.println(allocation1.length);
         allocation2 = new byte[3 * _1M];
-        System.out.println();
         allocation3 = new byte[4 * _1M];
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 //        TenuringThreshold.testTenuringThreshold();
         TenuringThreshold s = new TenuringThreshold();
         s.MinorGC();

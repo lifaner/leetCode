@@ -1,4 +1,4 @@
-package com.face;
+package face;
 
 public class FinalizedEscapeGC {
     public static FinalizedEscapeGC SAVE_HOOK = null;

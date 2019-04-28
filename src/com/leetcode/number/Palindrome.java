@@ -1,5 +1,10 @@
 package com.leetcode.number;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class Palindrome {
     /**
      * Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
@@ -50,8 +55,17 @@ public class Palindrome {
     }
 
     public static void main(String[] args) {
-        Palindrome p = new Palindrome();
-        int x = 121;
-        System.out.println(p.isPalindrome(x));
+//        Palindrome p = new Palindrome();
+//        int x = 122333221;
+//        System.out.println(p.isPalindrome(x));
+
+        Map x = new HashMap();
+        x.put(0,"1");
+        x.put(null , "2");
+        Integer key = new Integer(0);
+        int h = key.hashCode();
+        System.out.println(h ^ (h >>> 16));
+        System.out.println(x.get(0));
+
     }
 }

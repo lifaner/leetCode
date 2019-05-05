@@ -12,3 +12,5 @@ gen
 .idea/misc.xml
 .idea/modules.xml
 .idea/workspace.xml
+/dubbo/dubbo-provider/dubbo-provider.iml
+/dubbo/dubbo-provider/HELP.md

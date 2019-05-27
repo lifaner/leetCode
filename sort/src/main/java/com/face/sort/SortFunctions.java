@@ -1,5 +1,7 @@
 package com.face.sort;
 
+import java.util.Arrays;
+
 /**
  * Create by lifan.
  * Date: 2019/4/30.
@@ -8,19 +10,40 @@ package com.face.sort;
 public class SortFunctions {
 
 
-    public static int[] quickSort(int[] arr){
+    public int[] quickSort(int[] arr, int left, int right) {
+        int len = arr.length, partitionIndex;
 
-        /**
-         * 思路: 先拿第一个元素开始 比它小的 放在一个队列中
-         *       如果没有 从大的队列中拿第一个 重复操作
-         */
-        int start = arr[0];
-
-        for(int i=1; i < arr.length; i++){
-
+        if (left < right) {
+            partitionIndex = partition(arr, left, right);
+            quickSort(arr, left, partitionIndex - 1);
+            quickSort(arr, partitionIndex + 1, right);
         }
+        return arr;
+    }
 
-        int[] ints = new int[1];
-        return ints;
+    public int partition(int[] arr, int left, int right) {
+        int pivot = left, index = pivot + 1;
+        for (int i = index; i <= right; i++) {
+            if (arr[i] < arr[pivot]) {
+                swap(arr, i, index);
+                index++;
+            }
+        }
+        swap(arr, pivot, index - 1);
+        return index - 1;
+    }
+
+    public void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void main(String[] args) {
+        SortFunctions s = new SortFunctions();
+        int[] arr = new int[]{12, 20, 5, 16, 15, 1, 30, 45, 23, 9};
+        System.out.println(Arrays.toString(arr));
+        arr = s.quickSort(arr, 0, 9);
     }
 }

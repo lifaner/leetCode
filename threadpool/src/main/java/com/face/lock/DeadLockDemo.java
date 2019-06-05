@@ -45,7 +45,6 @@ public class DeadLockDemo {
 
     public static void main(String[] args) {
         new DeadLockDemo().deadLock();
-        i.compareAndSet()
     }
 
 }

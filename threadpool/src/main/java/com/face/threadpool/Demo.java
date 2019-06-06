@@ -1,7 +1,5 @@
 package com.face.threadpool;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Create by lifan.
@@ -10,7 +8,11 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 public class Demo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        SimpleHttpServer.setBasePath("F:/workspace/study/leetCode/threadpool/src/main/java/com/face/threadpool");
+        SimpleHttpServer.start();
     }
+
+
 
 }
